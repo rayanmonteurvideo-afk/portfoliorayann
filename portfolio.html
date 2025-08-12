@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Montage Vidéo - Rayan</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Segoe UI', sans-serif; background:#0a0a0a; color:#fff; overflow-x:hidden; }
+    h1,h2 { font-weight:700; letter-spacing:1px; }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* Header */
+    header { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; }
+    header iframe { width:90%; height:70vh; border:none; box-shadow:0 0 20px rgba(0,255,204,0.5); border-radius:10px; }
+    header h1 { font-size:3rem; margin-top:1rem; text-align:center; }
+    header p { font-size:1.2rem; color:#ccc; text-align:center; max-width:600px; margin-top:0.5rem; }
+
+    /* Sections */
+    section { padding:4rem 2rem; text-align:center; }
+    section h2 { font-size:2.5rem; margin-bottom:2rem; color:#00ffcc; text-shadow:0 0 10px #00ffcc; }
+
+    /* Grid videos */
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .card { position:relative; overflow:hidden; border-radius:10px; box-shadow:0 0 15px rgba(0,255,204,0.3);
+      transition:transform .3s, box-shadow .3s; cursor:pointer; }
+    .card:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(0,255,204,0.6); }
+    .card img { width:100%; display:block; }
+
+    /* Shorts */
+    .shorts { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+    .shorts iframe { width:200px; height:350px; border:none; border-radius:8px; box-shadow:0 0 15px rgba(0,255,204,0.3); }
+
+    /* Modal */
+    .modal { position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; z-index:999; }
+    .modal iframe { width:80%; height:80%; border:none; }
+    .modal.active { display:flex; }
+
+    footer { padding:2rem; font-size:0.9rem; text-align:center; background:#111; color:#aaa; }
+  </style>
+</head>
+<body>
+
+  <!-- Présentation principale -->
+  <header>
+    <!-- Vidéo principale lisible -->
+    <iframe src="https://www.youtube.com/embed/FfDhh9f0mBs?controls=1" 
+            title="Présentation de Rayan" allowfullscreen></iframe>
+    <h1>Bienvenue dans mon univers vidéo</h1>
+    <p>Découvrez mes créations : vlogs, storytelling, shorts & reels</p>
+  </header>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Je m'appelle <strong>Rayan</strong>, passionné de montage vidéo et de storytelling visuel. 
+    À travers mes projets, je cherche à capturer des émotions et raconter des histoires uniques.</p>
+    <p>📩 Me contacter : <a href="https://www.instagram.com/rayane._.ezz/" target="_blank">@rayane._.ezz</a></p>
+  </section>
+
+  <!-- Vlogs -->
+  <section>
+    <h2>Vlogs</h2>
+    <div class="grid">
+      <div class="card" data-url="https://www.youtube.com/embed/vWqoR9hia1E">
+        <img src="https://img.youtube.com/vi/vWqoR9hia1E/hqdefault.jpg" alt="Vlog 1"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/-0C4ofLNaQ8">
+        <img src="https://img.youtube.com/vi/-0C4ofLNaQ8/hqdefault.jpg" alt="Vlog 2"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/Qd9h0VxNpH8">
+        <img src="https://img.youtube.com/vi/Qd9h0VxNpH8/hqdefault.jpg" alt="Vlog 3"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/hJ3zdOvZNtk">
+        <img src="https://img.youtube.com/vi/hJ3zdOvZNtk/hqdefault.jpg" alt="Vlog 4"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/lSv66MxqU84">
+        <img src="https://img.youtube.com/vi/lSv66MxqU84/hqdefault.jpg" alt="Vlog 5"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Storytelling -->
+  <section>
+    <h2>Storytelling</h2>
+    <div class="grid">
+      <div class="card" data-url="https://www.youtube.com/embed/hJ3zdOvZNtk">
+        <img src="https://img.youtube.com/vi/hJ3zdOvZNtk/hqdefault.jpg" alt="Story 1"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/1Y2_wWc2Fis">
+        <img src="https://img.youtube.com/vi/1Y2_wWc2Fis/hqdefault.jpg" alt="Story 2"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/AxQHn9DohZg">
+        <img src="https://img.youtube.com/vi/AxQHn9DohZg/hqdefault.jpg" alt="Story 3"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/ESuFMUDRot8">
+        <img src="https://img.youtube.com/vi/ESuFMUDRot8/hqdefault.jpg" alt="Story 4"/>
+      </div>
+      <div class="card" data-url="https://www.youtube.com/embed/T3b7waORFU4">
+        <img src="https://img.youtube.com/vi/T3b7waORFU4/hqdefault.jpg" alt="Story 5"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shorts & Reels -->
+  <section>
+    <h2>Shorts & Reels</h2>
+    <div class="shorts">
+      <iframe src="https://www.youtube.com/embed/0S7S5-1viA4" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/2Cm1bNwZBbA" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/aGEgLIgDqys" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Ndqy0i6n4lQ" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Modal vidéo -->
+  <div class="modal" id="modal">
+    <iframe id="modalIframe" src="" allow="autoplay; fullscreen"></iframe>
+  </div>
+
+  <footer>
+    <p>© 2025 Rayan | Portfolio Vidéo</p>
+  </footer>
+
+  <script>
+    // Gestion modale
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const url = card.getAttribute('data-url');
+        document.getElementById('modalIframe').src = url + '?autoplay=1';
+        document.getElementById('modal').classList.add('active');
+      });
+    });
+    document.getElementById('modal').addEventListener('click', () => {
+      document.getElementById('modalIframe').src = '';
+      document.getElementById('modal').classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
